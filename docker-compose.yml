@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  db:
+    container_name: practice_ruby
+    build:
+      context: ./ruby_image
+    command: ["/bin/bash"]
+    tty: true
+    stdin_open: true
+    restart: always
+    env_file:
+      - ./ruby_image/ruby.env
+    volumes:
+      - ./ruby_lessons:/app/ruby_lessons/
+# Names our volume
+volumes:
+  ruby_lessons:
