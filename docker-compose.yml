@@ -1,17 +1,59 @@
 version: '3.9'
 services:
   ruby:
-    container_name: practice_ruby
     build:
-      context: ./ruby_image
+      context: ./ruby/image
+    image: practice_ruby:latest
+    container_name: practice_ruby
     command: ["/bin/bash"]
     tty: true
     stdin_open: true
     restart: always
     env_file:
-      - ./ruby_image/ruby.env
+      - ./ruby/image/ruby.env
     volumes:
-      - ./ruby_lessons:/app/ruby_lessons/
-# Names our volume
+      - ./ruby/lessons:/app/lessons/
+  python:
+    build:
+      context: ./python/image
+    image: practice_python:latest
+    container_name: practice_python
+    command: ["/bin/bash"]
+    tty: true
+    stdin_open: true
+    restart: always
+    env_file:
+      - ./python/image/python.env
+    volumes:
+      - ./python/lessons:/app/lessons/
+  go:
+    build:
+      context: ./go/image
+    image: practice_go:latest
+    container_name: practice_go
+    command: ["/bin/bash"]
+    tty: true
+    stdin_open: true
+    restart: always
+    env_file:
+      - ./go/image/go.env
+    volumes:
+      - ./go/lessons:/app/lessons/
+  nodejs:
+    build:
+      context: ./nodejs/image
+    image: practice_nodejs:latest
+    container_name: practice_nodejs
+    command: ["/bin/bash"]
+    tty: true
+    stdin_open: true
+    restart: always
+    env_file:
+      - ./nodejs/image/nodejs.env
+    volumes:
+      - ./nodejs/lessons:/app/lessons/
 volumes:
   ruby_lessons:
+  python_lessons:
+  nodejs_lessons:
+  go_lessons:

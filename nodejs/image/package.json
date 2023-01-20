@@ -1,0 +1,15 @@
+{
+  "name": "practice-nodejs",
+  "version": "1.0.0",
+  "description": "A node.js container for practicing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Krishna Prasad Varma",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
